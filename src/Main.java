@@ -2,6 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String random = "";
+        for (int i = 0; i < 3; i++) {
+            String num = Integer.toString((int) (Math.random() * 10));
+            if (random.contains(num)) {
+                continue;
+            } else {
+                random += num;
+            }
+        }
+        System.out.println(random);
+
         int comNumber = 356;
         int trial = 1;
         String strComNumber = String.valueOf(comNumber);
@@ -28,6 +39,5 @@ public class Main {
             System.out.println(result);
             trial++;
         }
-
     }
 }
