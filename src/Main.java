@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String random = "";
-        for (int i = 0; i < 3; i++) {
+        while (random.length() < 3){
             String num = Integer.toString((int) (Math.random() * 10));
             if (random.contains(num)) {
                 continue;
@@ -11,11 +11,10 @@ public class Main {
                 random += num;
             }
         }
-        System.out.println(random);
+//        System.out.println(random);
 
-        int comNumber = 356;
         int trial = 1;
-        String strComNumber = String.valueOf(comNumber);
+        String strComNumber = String.valueOf(random);
         Scanner sc = new Scanner(System.in);
         while (true) {
             String userNumber = sc.nextLine();
