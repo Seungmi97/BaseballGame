@@ -20,6 +20,7 @@ public class Main {
             String userNumber = sc.nextLine();
             System.out.println(trial + "번째 시도 : " + userNumber);
             if (userNumber.equals(strComNumber)) {
+                System.out.println("3S");
                 System.out.println(trial + "번만에 맞히셨습니다.");
                 System.out.println("게임을 종료합니다.");
                 break;
