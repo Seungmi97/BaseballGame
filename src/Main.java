@@ -14,19 +14,17 @@ public class Main {
 //        System.out.println(random);
 
         int trial = 1;
-        String strComNumber = String.valueOf(random);
         Scanner sc = new Scanner(System.in);
         while (true) {
             String userNumber = sc.nextLine();
             System.out.println(trial + "번째 시도 : " + userNumber);
 
-            int sCnt = 0;
-            int bCnt = 0;
+            int sCnt = 0;   // Strike
+            int bCnt = 0;   // Ball
             for (int i = 0; i < 3; i++) {
-                if (strComNumber.charAt(i) == userNumber.charAt(i)) {
+                if (random.charAt(i) == userNumber.charAt(i)) {
                     sCnt++;
-                }
-                if (strComNumber.contains(String.valueOf(userNumber.charAt(i)))) {
+                } else if (random.contains(String.valueOf(userNumber.charAt(i)))) {
                     bCnt++;
                 }
             }
