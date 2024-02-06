@@ -19,12 +19,7 @@ public class Main {
         while (true) {
             String userNumber = sc.nextLine();
             System.out.println(trial + "번째 시도 : " + userNumber);
-            if (userNumber.equals(strComNumber)) {
-                System.out.println("3S");
-                System.out.println(trial + "번만에 맞히셨습니다.");
-                System.out.println("게임을 종료합니다.");
-                break;
-            }
+
             int sCnt = 0;
             int bCnt = 0;
             for (int i = 0; i < 3; i++) {
@@ -35,9 +30,18 @@ public class Main {
                     bCnt++;
                 }
             }
-            String result = bCnt + "B" + sCnt + "S";
-            System.out.println(result);
-            trial++;
+            if (sCnt == 3) {
+                System.out.println("3S");
+                System.out.println(trial + "번만에 맞히셨습니다.");
+                System.out.println("게임을 종료합니다.");
+                break;
+            } else if (bCnt == 3 && sCnt == 0) {
+                System.out.println("3B");
+            } else {
+                String result = bCnt + "B" + sCnt + "S";
+                System.out.println(result);
+                trial++;
+            }
         }
     }
 }
